@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    public function Fees(){
+    protected $table = 'cars';
+
+    public function Review(){
         return $this->hasMany('App\Review', 'car_id');
 
     }

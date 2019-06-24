@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    public function Student(){
+    protected $table = 'reviews';
+
+    public function Car(){
         return $this->belongsTo('App\Car', 'car_id');
 
     }

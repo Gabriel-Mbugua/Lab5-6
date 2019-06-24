@@ -3,23 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Review;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+    public function index(){
+        return view('newcar');
+    }
+
+    public function home(){
+        return view('welcome');
+    }
+
     public function allCars(){
         //read all cars
         $cars = Car::all();
         return view('allcars',['cars' => $cars]);
     }
 
-    public function particularcar($id){
+    public function particularCar(){
         //read a particular car identified by id
-        $cars = Car::find($id);
-    }
-
-    public function index(){
-        return view('newcar');
+        $search = request('query');
+        $cars = Review::with('Car')->where('car_id', $search)->get();
+        return view("particularcar", ['cars' => $cars]);
     }
 
     public function newCar(){

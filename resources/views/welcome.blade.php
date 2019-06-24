@@ -72,7 +72,7 @@
         </div>
 
         <div class="links">
-            <a href="/allcars">Cars</a>
+            <a href="/car">Cars</a>
             <a href="/review">Reviews</a>
             <a href="/newcar">New Car</a>
             <a href="/newreview">New Review</a>

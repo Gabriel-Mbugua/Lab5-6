@@ -28,7 +28,7 @@ class ReviewsController extends Controller
 
         $review = new Review;
         $review->body = request('body');
-//        $review->car_id = $car->id;
+//      $review->car_id = $car->id;
         $review->car_id = request('car_id');
         $review->save();
 
